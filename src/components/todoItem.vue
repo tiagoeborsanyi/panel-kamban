@@ -5,8 +5,7 @@
       <a class="remove" @click="$emit('remove')"><i class="material-icons">clear</i></a>
       <div class="task">
         <p>{{dataitem}}</p>
-          <i class="material-icons icon-color">more_horiz</i>
-        <!-- Dropdown Trigger -->
+        <!--i class="material-icons icon-color">more_horiz</i-->
         <div class="chip">
           <a href="#">@user</a>
         </div>
