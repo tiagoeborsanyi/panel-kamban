@@ -1,65 +1,35 @@
 <template>
   <div id="app">
     <div class="input-model">
-      <input v-model="newTodoText" @keyup.enter="addNewTodo" placeholder="Adicione uma nova task">
+      Add a list:
+      <input v-model="newTodoList" @keyup.enter="addNewList" placeholder="Adicione uma nova coluna">
     </div>
     <div id="drag-scope">
-      <div class="column">
-        <div class="title">Tarefas a Fazer</div>
-        <todo-container class="regular green lighten-5" :data="todos.regular">
-          <todo-item
-            v-for="(todo, index) in todos.regular"
-            :dataitem="todo"
-            :key="index"
-            @remove="todos.regular.splice(index, 1)"></todo-item>
-        </todo-container>
-      </div>
-      <div class="column">
-        <div class="title">Em Andamento</div>
-        <todo-container class="priority red lighten-4" :data="todos.priority">
-          <todo-item
-            v-for="(todo, index) in todos.priority"
-            :dataitem="todo"
-            :key="index"
-            @remove="todos.priority.splice(index, 1)"></todo-item>
-        </todo-container>
-      </div>
-      <div class="column">
-        <div class="title">Concluido</div>
-        <todo-container class="done grey lighten-2" :data="todos.done">
-          <todo-item
-            v-for="(todo, index) in todos.done"
-            :dataitem="todo"
-            :key="index"
-            @remove="todos.done.splice(index, 1)"></todo-item>
-        </todo-container>
-      </div>
+      <todo-grid :todos="todos"></todo-grid>
     </div>
   </div>
 </template>
 
 <script>
-import todoContainer from './components/todoContainer.vue';
-import todoItem from './components/todoItem.vue';
-
+import todoGrid from './components/todoGrid.vue';
 export default {
   data () {
     return {
-      newTodoText: '',
-      todos: {
-        regular: [
-          'Inicio do Projeto',
-          'Commit inicial',
-          'Execução do Projeto'
-        ],
-        priority: [],
-        done: []
-      }
+      newTodoList: '',
+      todos: [
+        /*{
+          title: 'teste regular',
+          regular: [
+            'Inicio do Projeto',
+            'Commit inicial',
+            'Execução do Projeto'
+          ]
+        }*/
+      ]
     }
   },
   components: {
-    todoContainer,
-    todoItem
+    todoGrid
   },
   mounted() {
     lmdd.set(document.getElementById('drag-scope'), {
@@ -84,6 +54,12 @@ export default {
     addNewTodo() {
       this.todos.regular.push(this.newTodoText)
       this.newTodoText = ''
+    },
+    addNewList() {
+      this.todos.push({
+        title: this.newTodoList,
+        regular: []
+      })
     }
   }
 }
@@ -105,6 +81,10 @@ export default {
     .column {
       flex: 1 1 350px;
       }
+
+    .bloco {
+      display: inline-flex;
+    }
 
     .todo-container {
       display: flex;
