@@ -4,7 +4,12 @@
       <i class="material-icons handle">reorder</i>
       <a class="remove" @click="$emit('remove')"><i class="material-icons">clear</i></a>
       <div class="task">
-        {{dataitem}}
+        <p>{{dataitem}}</p>
+          <i class="material-icons icon-color">more_horiz</i>
+        <!-- Dropdown Trigger -->
+        <div class="chip">
+          <a href="#">@user</a>
+        </div>
       </div>
     </div>
   </div>
@@ -17,6 +22,12 @@ export default {
 </script>
 
 <style lang="css">
+.icon-color {
+  margin-right: 5px;
+  margin-bottom: 0;
+  color: #ccc;
+}
+
 .todo-item {
 padding: 3px;
 margin: 5px;

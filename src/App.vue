@@ -5,7 +5,7 @@
       <input v-model="newTodoList" @keyup.enter="addNewList" placeholder="Adicione uma nova coluna">
     </div>
     <div id="drag-scope">
-      <todo-grid :todos="todos"></todo-grid>
+      <todo-grid :todos="todos" @addItemList="addItem"></todo-grid>
     </div>
   </div>
 </template>
@@ -60,6 +60,9 @@ export default {
         title: this.newTodoList,
         regular: []
       })
+    },
+    addItem (value) {
+      this.todos[value[0]].regular.push(value[1]);
     }
   }
 }
