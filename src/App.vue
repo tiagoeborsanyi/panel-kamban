@@ -4,10 +4,10 @@
       Add a list:
       <input v-model="newTodoList" @keyup.enter="addNewList" placeholder="Adicione uma nova coluna">
     </div>
-    <div id="drag-scope">
+    <!--div id="drag-scope"-->
       <todo-grid :todos="todos" @addItemList="addItem"></todo-grid>
     </div>
-  </div>
+  <!--/div-->
 </template>
 
 <script>
@@ -16,16 +16,7 @@ export default {
   data () {
     return {
       newTodoList: '',
-      todos: [
-        /*{
-          title: 'teste regular',
-          regular: [
-            'Inicio do Projeto',
-            'Commit inicial',
-            'Execução do Projeto'
-          ]
-        }*/
-      ]
+      todos: []
     }
   },
   components: {

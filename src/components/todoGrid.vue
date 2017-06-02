@@ -1,6 +1,6 @@
 <template>
-  <div class="bloco">
-    <div class="column" v-for="(t, index) in todos" :id="index">
+  <div id="drag-scope">
+    <div class="column" v-for="(t, index) in todos">
       <div class="title">{{t.title}}</div>
       <todo-container class="regular lighten-5" :class="colors.verde" :data="t.regular">
         <todo-item
@@ -9,7 +9,7 @@
           :key="i"
           @remove="t.regular.splice(i, 1)"></todo-item>
           <div class="input-model">
-            <input type="text" placeholder="Insira uma task" v-model="item" @keyup.enter="insertItem(index)">
+            <input type="text" placeholder="Insira uma task" :id="index" @keyup.enter="insertItem(index)">
           </div>
       </todo-container>
     </div>
@@ -41,8 +41,8 @@ export default {
   },
   methods: {
     insertItem (index) {
-      this.$emit('addItemList', [index, this.item]);
-      this.item = '';
+      this.$emit('addItemList', [index, document.getElementById(index).value]);
+      console.log(document.getElementById(index).value);
     }
   }
 }
