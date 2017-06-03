@@ -1,6 +1,8 @@
 # panel-kamban
 
 > A Vue.js project
+> O projeto consiste em um painel kamban onde o usuário pode criar listas/colunas e dentro das lista pode inserir cards para cada tarefa a ser realizada
+> Os cards podem ser mudados de cor, assim como movidos entre colunas/listas ou deletados ou ainda colocar em uma coluna especifica para tarefas finalizadas
 
 ## Build Setup
 
