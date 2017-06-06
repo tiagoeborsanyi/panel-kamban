@@ -50,7 +50,8 @@ export default {
       this.todos.push({
         title: this.newTodoList,
         regular: []
-      })
+      });
+      this.newTodoList = ''
     },
     addItem (value) {
       this.todos[value[0]].regular.push(value[1]);

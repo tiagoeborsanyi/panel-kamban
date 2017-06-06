@@ -6,8 +6,22 @@
       <div class="task">
         <p>{{dataitem}}</p>
         <!--i class="material-icons icon-color">more_horiz</i-->
-        <div class="chip">
-          <a href="#">@user</a>
+        <div class="chip-tags">
+          <div class="chip">
+            <a href="#">@user</a>
+          </div>
+          <div class="chip" style="background-color:blue">
+            <p>.</p>
+          </div>
+          <div class="chip" style="background-color:#fff">
+            <p>.</p>
+          </div>
+          <div class="chip" style="background-color:green">
+            <p>.</p>
+          </div>
+          <div class="chip" style="background-color:red">
+            <p>.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -25,6 +39,10 @@ export default {
   margin-right: 5px;
   margin-bottom: 0;
   color: #ccc;
+}
+
+.chip-tags {
+  display: inline-flex;
 }
 
 .todo-item {

@@ -43,6 +43,7 @@ export default {
     insertItem (index) {
       this.$emit('addItemList', [index, document.getElementById(index).value]);
       console.log(document.getElementById(index).value);
+      document.getElementById(index).value = ''
     }
   }
 }
