@@ -17,8 +17,10 @@
 </template>
 
 <script>
+import { eventItemColor } from '../main';
 import todoContainer from './todoContainer.vue';
 import todoItem from './todoItem.vue';
+
 export default {
   data() {
     return {

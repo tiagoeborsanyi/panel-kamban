@@ -1,5 +1,5 @@
 <template>
-  <div class="z-depth-3 todo-item">
+  <div class="z-depth-3 todo-item" :style="colorido">
     <div class="content lmdd-block">
       <i class="material-icons handle">reorder</i>
       <a class="remove" @click="$emit('remove')"><i class="material-icons">clear</i></a>
@@ -10,16 +10,13 @@
           <div class="chip">
             <a href="#">@user</a>
           </div>
-          <div class="chip" style="background-color:blue">
+          <div class="chip" style="background-color:#0d9cfa" @click="editBlue">
             <p>.</p>
           </div>
-          <div class="chip" style="background-color:#fff">
+          <div class="chip" style="background-color:#8bc34a" @click="editGreen">
             <p>.</p>
           </div>
-          <div class="chip" style="background-color:green">
-            <p>.</p>
-          </div>
-          <div class="chip" style="background-color:red">
+          <div class="chip" style="background-color:#dcdcdc" @click="editBranco">
             <p>.</p>
           </div>
         </div>
@@ -29,8 +26,26 @@
 </template>
 
 <script>
+import { eventItemColor } from '../main';
+
 export default {
-  props: ['dataitem']
+  data() {
+    return {
+      colorido: {background: '#8bc34a'}
+    }
+  },
+  props: ['dataitem'],
+  methods: {
+    editBlue() {
+      this.colorido = {background: '#0d9cfa'}
+    },
+    editGreen() {
+      this.colorido = {background: '#8bc34a'}
+    },
+    editBranco() {
+      this.colorido = {background: '#dcdcdc'}
+    }
+  }
 }
 </script>
 
