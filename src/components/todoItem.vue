@@ -11,13 +11,13 @@
             <a href="#">@user</a>
           </div>
           <div class="chip" style="background-color:#0d9cfa" @click="editBlue">
-            <p>.</p>
+            <p></p>
           </div>
           <div class="chip" style="background-color:#8bc34a" @click="editGreen">
-            <p>.</p>
+            <p></p>
           </div>
           <div class="chip" style="background-color:#dcdcdc" @click="editBranco">
-            <p>.</p>
+            <p></p>
           </div>
         </div>
       </div>
